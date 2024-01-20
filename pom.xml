@@ -18,6 +18,8 @@
         <module>gateway</module>
         <module>discovery-server</module>
         <module>config-server</module>
+        <module>student-service</module>
+        <module>school-service</module>
     </modules>
 
     <properties>

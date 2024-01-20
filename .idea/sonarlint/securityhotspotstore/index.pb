@@ -34,3 +34,7 @@ c
 3student-service/src/main/resources/application.yaml,d\b\dba0edff23e012179de029efcaacc16a34d6cdce
 b
 2school-service/src/main/resources/application.yaml,2\2\22fa78cdfef3715355f75451ba1d4a15e581b6a3
+p
+@student-service/src/main/java/org/ra/sw/student-service/App.java,5\1\513354264910adc5297b4b1ee56697fd5a9fc122
+n
+>school-service/src/main/java/org/ra/sw/school-service/App.java,2\2\226f879dc1753d94cb21e25c346bc8e8d6f01fb2
