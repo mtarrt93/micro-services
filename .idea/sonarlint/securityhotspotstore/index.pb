@@ -19,3 +19,8 @@ E
 config-server/pom.xml,a\2\a2f9618c8ad821b143a07a29a9805fcb0b2df470
 H
 discovery-server/pom.xml,2\c\2c58c7878e43d126fc56cae853d5b06de57d0b3e
+[
++gateway/src/main/resources/application.yaml,a\b\ab3c4bf349c6b3ab64efaca637a9b7aad2a29566
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
