@@ -24,3 +24,13 @@ H
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+r
+Bdiscovery-server/src/main/java/org/ra/sw/discovery-server/App.java,e\e\ee65b62e2776d3d538976941c37ebdb1e10a8173
+G
+school-.service/pom.xml,a\d\ad0a303ef4317ce54e0d2bbedb802a85891fb64c
+G
+student-service/pom.xml,f\4\f4319568770242d2a2c2c36545daea07ecd863d8
+c
+3student-service/src/main/resources/application.yaml,d\b\dba0edff23e012179de029efcaacc16a34d6cdce
+b
+2school-service/src/main/resources/application.yaml,2\2\22fa78cdfef3715355f75451ba1d4a15e581b6a3
