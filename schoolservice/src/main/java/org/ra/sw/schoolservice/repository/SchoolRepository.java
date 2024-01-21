@@ -1,9 +1,9 @@
-package org.ra.sw.studentservice.repository;
+package org.ra.sw.schoolservice.repository;
 
-import org.ra.sw.studentservice.entity.StudentEntity;
+import org.ra.sw.schoolservice.entity.SchoolEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StudentRepository extends JpaRepository<StudentEntity, Long> {
+public interface SchoolRepository extends JpaRepository<SchoolEntity, Long> {
 }

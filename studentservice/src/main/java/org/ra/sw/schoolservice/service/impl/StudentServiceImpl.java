@@ -1,10 +1,10 @@
-package org.ra.sw.studentservice.service.impl;
+package org.ra.sw.schoolservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.ra.sw.studentservice.entity.StudentEntity;
-import org.ra.sw.studentservice.repository.StudentRepository;
-import org.ra.sw.studentservice.service.StudentService;
+import org.ra.sw.schoolservice.entity.StudentEntity;
+import org.ra.sw.schoolservice.repository.StudentRepository;
+import org.ra.sw.schoolservice.service.StudentService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +21,14 @@ public class StudentServiceImpl implements StudentService {
     public List<StudentEntity> getAll() {
         log.info("getAll - START");
         List<StudentEntity> students = this.studentRepository.findAll();
+        log.info("Fetch {} students", students.size());
+        return  students;
+    }
+
+    @Override
+    public List<StudentEntity> getAllBySchoolId(Long schoolId) {
+        log.info("getAllBySchoolId - START - param={}", schoolId);
+        List<StudentEntity> students = this.studentRepository.findBySchoolId(schoolId);
         log.info("Fetch {} students", students.size());
         return  students;
     }

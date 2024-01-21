@@ -1,4 +1,4 @@
-package org.ra.sw.studentservice.entity;
+package org.ra.sw.schoolservice.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package org.ra.sw.studentservice;
+package org.ra.sw.schoolservice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;

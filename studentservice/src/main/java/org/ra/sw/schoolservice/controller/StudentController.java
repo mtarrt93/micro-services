@@ -1,13 +1,13 @@
-package org.ra.sw.studentservice.controller;
+package org.ra.sw.schoolservice.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.ra.sw.studentservice.dto.StudentSaveRequest;
-import org.ra.sw.studentservice.entity.StudentEntity;
-import org.ra.sw.studentservice.service.StudentService;
+import org.ra.sw.schoolservice.dto.StudentSaveRequest;
+import org.ra.sw.schoolservice.entity.StudentEntity;
+import org.ra.sw.schoolservice.service.StudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +32,14 @@ public class StudentController {
                 .body(this.studentService.getAll());
     }
 
+    @GetMapping(path = "/school-id/{school-id}")
+    public ResponseEntity<List<StudentEntity>> getAllBySchoolId(final HttpServletRequest httpReq, @PathVariable(value = "school-id") Long schoolId) {
+        log.info(">>> {} {}", httpReq.getMethod(), httpReq.getServletPath());
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(this.studentService.getAllBySchoolId(schoolId));
+    }
+
     @PostMapping
     public ResponseEntity<StudentEntity> save(final HttpServletRequest httpReq, @RequestBody StudentSaveRequest studentToSave) throws ServletException, IOException {
         log.info(">>> {} {}", httpReq.getMethod(), httpReq.getServletPath());
@@ -40,6 +48,7 @@ public class StudentController {
             .firstname(studentToSave.firstname())
             .lastname(studentToSave.lastname())
             .email(studentToSave.email())
+            .schoolId(studentToSave.schoolId())
             .build();
         Optional<StudentEntity> studentSaved = this.studentService.save(student);
         return studentSaved

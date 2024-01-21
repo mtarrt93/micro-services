@@ -1,3 +1,5 @@
 package org.ra.sw.schoolservice.dto;
 
-public record SchoolSaveRequest(String name, String email) { }
+import java.util.List;
+
+public record SchoolStudentsResponse(String name, String email, List<StudentDto> studentDto) { }

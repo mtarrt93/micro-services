@@ -1,2 +1,3 @@
-package org.ra.sw.schoolservice.dto;public class StudentDto {
-}
+package org.ra.sw.schoolservice.dto;
+
+public record StudentDto(String id, String firstname, String lastname, String email) {}
