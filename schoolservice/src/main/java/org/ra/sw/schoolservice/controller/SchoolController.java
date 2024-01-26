@@ -37,7 +37,9 @@ public class SchoolController {
     public ResponseEntity<SchoolStudentsResponse> getAllWithStudents(final HttpServletRequest httpReq, @PathVariable(value = "school-id") Long schoolId) {
         log.info(">>> {} {}", httpReq.getMethod(), httpReq.getServletPath());
         Optional<SchoolStudentsResponse> schoolStudentsResponse = this.schoolService.getSchoolAndRelativeStudentsBySchoolId(schoolId);
-        return null;
+        return schoolStudentsResponse.isPresent()
+            ? ResponseEntity.ok(schoolStudentsResponse.get())
+            : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @PostMapping

@@ -2,10 +2,13 @@ package org.ra.sw.schoolservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.ra.sw.schoolservice.client.StudentServiceClient;
 import org.ra.sw.schoolservice.dto.SchoolStudentsResponse;
+import org.ra.sw.schoolservice.dto.StudentDto;
 import org.ra.sw.schoolservice.entity.SchoolEntity;
 import org.ra.sw.schoolservice.repository.SchoolRepository;
 import org.ra.sw.schoolservice.service.SchoolService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +20,7 @@ import java.util.Optional;
 @Slf4j
 public class SchoolServiceImpl implements SchoolService {
     private final SchoolRepository studentRepository;
-
+    private final StudentServiceClient  studentServiceClient;
     @Override
     public List<SchoolEntity> getAll() {
         log.info("getAll - START");
@@ -37,11 +40,22 @@ public class SchoolServiceImpl implements SchoolService {
         log.info("getSchoolAndRelativeStudentsBySchoolId - START - param={}", schoolId);
         Optional<SchoolEntity> school = this.getById(schoolId);
         if( school.isEmpty() ) {
+            log.info("school with id={} not found", schoolId);
             return Optional.empty();
         }
         // call service located on students that retrieved students by school id
-
-        return Optional.empty();
+        log.info("Call external service for fetching students by school-id={} ...", schoolId);
+        ResponseEntity<List<StudentDto>> studentsServiceResponse = this.studentServiceClient.getAllStudentsBy(schoolId);
+        if( !studentsServiceResponse.getStatusCode().is2xxSuccessful() ) {
+            throw new RuntimeException( String.format("Error to fetch student by student-service for school-id=%s", schoolId ) );
+        }
+        return Optional.of(
+            new SchoolStudentsResponse(
+                school.get().getName(),
+                school.get().getEmail(),
+                    studentsServiceResponse.getBody()
+            )
+        );
     }
 
     @Override

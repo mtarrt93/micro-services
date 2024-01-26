@@ -1,0 +1,38 @@
+eureka:
+    instance:
+        hostname: localhost
+    client:
+        register-with-eureka: false
+
+server:
+    port: 8887
+
+spring:
+    application:
+        name: gateway
+    cloud:
+        gateway:
+            discovery:
+                locator:
+                    enabled: true
+            routes:
+                - id: student-service
+                  uri: http://localhost:8891
+                  predicates:
+                    - Path=/api/students/**
+                - id: school-service
+                  uri: http://localhost:8890
+                  predicates:
+                    - Path=/api/schools/**
+    output:
+        ansi:
+            enabled: always
+
+logging:
+  level:
+    reactor:
+      netty: INFO
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE

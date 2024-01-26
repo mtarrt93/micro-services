@@ -2,6 +2,7 @@ B:\repo\micro-services\schoolservice\src\main\java\org\ra\sw\schoolservice\servi
 B:\repo\micro-services\schoolservice\src\main\java\org\ra\sw\schoolservice\App.java
 B:\repo\micro-services\schoolservice\src\main\java\org\ra\sw\schoolservice\dto\SchoolSaveRequest.java
 B:\repo\micro-services\schoolservice\src\main\java\org\ra\sw\schoolservice\service\impl\SchoolServiceImpl.java
+B:\repo\micro-services\schoolservice\src\main\java\org\ra\sw\schoolservice\client\StudentServiceClient.java
 B:\repo\micro-services\schoolservice\src\main\java\org\ra\sw\schoolservice\dto\SchoolStudentsResponse.java
 B:\repo\micro-services\schoolservice\src\main\java\org\ra\sw\schoolservice\dto\StudentDto.java
 B:\repo\micro-services\schoolservice\src\main\java\org\ra\sw\schoolservice\entity\SchoolEntity.java

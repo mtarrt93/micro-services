@@ -116,3 +116,9 @@ Wschoolservice/src/main/java/org/ra/sw/schoolservice/service/impl/SchoolServiceI
 Sschoolservice/src/main/java/org/ra/sw/schoolservice/dto/SchoolStudentsResponse.java,6\3\635ee3e90518afe702e17f29c4098416718b3d9b
 w
 Gschoolservice/src/main/java/org/ra/sw/schoolservice/dto/StudentDto.java,b\f\bfc9c0fbf3289b32bb74bd9974f90b9780fcc951
+~
+Nschoolservice/src/main/java/org/ra/sw/schoolservice/client/StudentService.java,4\7\478a9c5c885465e9f70c4e58a6e0129ec802da29
+„
+Tschoolservice/src/main/java/org/ra/sw/schoolservice/client/StudentServiceClient.java,b\3\b3537f6b0c8104a557d673e04006f56b45c053b5
+^
+.config/src/main/java/org/ra/sw/config/App.java,3\b\3b3fa7ac362abf0d1626f942293339709a9df06b

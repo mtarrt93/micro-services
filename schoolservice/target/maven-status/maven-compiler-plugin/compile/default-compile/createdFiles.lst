@@ -1,3 +1,4 @@
+org\ra\sw\schoolservice\client\StudentServiceClient.class
 org\ra\sw\schoolservice\dto\StudentDto.class
 org\ra\sw\schoolservice\dto\SchoolSaveRequest.class
 org\ra\sw\schoolservice\App.class
